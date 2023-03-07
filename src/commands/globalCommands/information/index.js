@@ -66,7 +66,7 @@ module.exports = {
 		const commandResponse = new EmbedBuilder()
 			.setColor(0x0099FF)
 			.setThumbnail(interaction.member.guild.iconURL())
-			.setAuthor({ name: `${randomTitle[randomChoose]}`, iconURL: 'https://cdn.discordapp.com/avatars/1018948444653633588/9525e6bae590bfe158d22f2b607608b9.webp?size=4096&width=554&height=554' })
+			.setAuthor({ name: `${randomTitle[randomChoose]}`, iconURL: 'https://cdn.discordapp.com/emojis/588505226441392129.webp?size=96&quality=lossless' })
             .addFields(
 				{ name: '🔍 群組綜觀', value: ' '},
                 //{ name: '\u200B', value: '\u200B' },
