@@ -1,6 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
 const { EmbedBuilder } = require('discord.js');
-const { pingResponseIntroduce,pingResponseDC1,pingResponseDC2 } = require('./embed.js')
+const { pingResponseIntroduce} = require('./embed.js')
 
 const { info } = require('../../../modules/consoleMsg/console.js')
 const { getDateTime } = require('../../../modules/time/getTime.js')
@@ -24,21 +24,16 @@ module.exports = {
 			.setDescription('使用子指令查詢資料')
 			.addSubcommand(subcommand =>
 				subcommand
-					.setName('小冰')
+					.setName('我')
 					.setDescription('關於我自己的一切')
 					//.addUserOption(option => option.setName('target').setDescription('The user'))
-					)
-			.addSubcommand(subcommand =>
-				subcommand
-					.setName('築夢物語')
-					.setDescription('關於我家鄉的資訊')
 					),
 	async execute(interaction) {
 		//console.log(interaction.options.getSubcommand())
 		let time = getDateTime()
 
 		//console.log(interaction.commandName)
-		if (interaction.options.getSubcommand() === '小冰'){
+		if (interaction.options.getSubcommand() === '我'){
 			//let time = getDateTime()
 
 			if(!commandCooldown1.includes(interaction.channelId)){
@@ -66,36 +61,6 @@ module.exports = {
 
 
 		} 
-
-		if (interaction.options.getSubcommand() === '築夢物語'){
-
-			if(!commandCooldown2.includes(interaction.channelId)){
-				await interaction.reply({embeds: [pingResponseDC1(time),pingResponseDC2(time)]})
-				info(`${interaction.user.username}#${interaction.user.discriminator} issued command '${interaction.commandName}/${interaction.options.getSubcommand()}'`);
-				info(`${interaction.commandName} triggered, pushed channel ${interaction.channelId}(#${interaction.channel.name}) into cooldown list`);			
-
-				commandCooldown2.push(interaction.channelId); 
-				commandCooldown2.push(interaction.channel.name);  
-				
-				//pingCooldown = true;
-				setTimeout(function () {
-					
-					//pingCooldown = false;
-					info(`command ${interaction.commandName}/${interaction.options.getSubcommand()} ended, dropped channel ${commandCooldown2[0]}(#${commandCooldown2[1]})`);
-					commandCooldown2.shift()
-					commandCooldown2.shift()
-
-				}, 30000);   		
-
-			} else {
-				await interaction.reply({embeds: [pingResponseDC1(time),pingResponseDC2(time)], ephemeral: true});
-				info(`${interaction.user.username}#${interaction.user.discriminator} issued command '${interaction.commandName}/${interaction.options.getSubcommand()}' (ephemeral)`)	
-			}
-
-
-
-			
-		}
 
 	},
 };
