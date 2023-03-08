@@ -12,14 +12,13 @@ async function pingResponseIntroduce(time){
     return new EmbedBuilder()
 		.setColor(0x0099FF)
 		.setAuthor({ name: '嗨 你好!', iconURL: 'https://cdn.discordapp.com/emojis/588505226441392129.webp?size=96&quality=lossless' })
-		.setDescription('我是由 <@192995817626402818> 所主導開發的 Discord 機器人，\n是其第一代重頭開始撰寫的第一個正式開源專案，\n所以是個試驗品！可能會有點瑕疵。\n而我呢，叫做小冰，初次見面，您好！')
+		.setDescription('我是由 <@192995817626402818> 所主導開發的 Discord 機器人，\n是其第一代從頭開始撰寫的正式開源專案，代號為JS PROJECT。')
         .addFields(
             { name: '⭐ 開發資訊', value: ' ' },
             //{ name: '\u200B', value: '\u200B' },
             { name: '<:mgwand:964155420514091008>開發、維護者', value: '> jack.hunag_14', inline: true},
-            { name: ':gear: 運行版本', value: '> 第三代 \n> ||打掉重練二次||', inline: true},
+            { name: ':gear: 運行版本', value: '> 第一代 \n> ||但打掉重練二次||', inline: true},
             { name: '⭐ 相關資源', value: ' '},
-            { name: 'Discord 社群', value: '> [點我前往](https://discord.com/invite/as77uKwjyV)', inline: true},
             { name: 'Github 開源碼', value: '> [點我前往](https://github.com/jackHuang14/DiscordJSProject/)', inline: true},
             { name: '⭐ 系統資訊', value: ' '},
             { name: '系統延遲', value: `> ${client.ws.ping}`, inline: true},
